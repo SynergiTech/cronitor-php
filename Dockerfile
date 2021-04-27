@@ -12,7 +12,9 @@ COPY composer.json ./
 
 RUN composer install
 
-COPY src tests ecs.php phpstan.neon phpunit.xml ./
+COPY src ./src
+COPY tests ./tests
+COPY ecs.php phpstan.neon phpunit.xml ./
 
 RUN vendor/bin/parallel-lint --no-colors --no-progress src tests
 RUN vendor/bin/ecs -n --no-progress-bar
