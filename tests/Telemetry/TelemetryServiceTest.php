@@ -113,7 +113,7 @@ class TelemetryServiceTest extends TestCase
         $client = new Client('', $guzzle);
 
         $testExceptionHandler = new class() implements ExceptionHandlerInterface {
-            public bool $exceptionReported = false;
+            public $exceptionReported = false;
 
             public function report(\Throwable $e): void
             {

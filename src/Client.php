@@ -8,13 +8,25 @@ use SynergiTech\Cronitor\Telemetry\TelemetryService;
 
 class Client
 {
-    private GuzzleClient $httpClient;
+    /**
+     * @var GuzzleClient
+     */
+    private $httpClient;
 
-    private string $apiKey;
+    /**
+     * @var string
+     */
+    private $apiKey;
 
-    private TelemetryService $telemetryService;
+    /**
+     * @var TelemetryService
+     */
+    private $telemetryService;
 
-    private MonitorService $monitorService;
+    /**
+     * @var MonitorService
+     */
+    private $monitorService;
 
     public function __construct(string $apiKey, GuzzleClient $httpClient = null)
     {

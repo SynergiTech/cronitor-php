@@ -7,13 +7,25 @@ use SynergiTech\Cronitor\Client;
 
 class TelemetryService
 {
-    public static string $telemetryBaseUrl = 'https://cronitor.link/p/';
+    /**
+     * @var string
+     */
+    public static $telemetryBaseUrl = 'https://cronitor.link/p/';
 
-    private Client $client;
+    /**
+     * @var Client
+     */
+    private $client;
 
-    private ?HostnameResolverInterface $hostnameResolver;
+    /**
+     * @var HostnameResolverInterface|null
+     */
+    private $hostnameResolver;
 
-    private ?ExceptionHandlerInterface $exceptionHandler;
+    /**
+     * @var ExceptionHandlerInterface|null
+     */
+    private $exceptionHandler;
 
     public function __construct(
         Client $client,

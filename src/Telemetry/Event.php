@@ -4,20 +4,35 @@ namespace SynergiTech\Cronitor\Telemetry;
 
 class Event
 {
-    private string $state;
+    /**
+     * @var string
+     */
+    private $state;
 
-    private ?string $host = null;
+    /**
+     * @var string|null
+     */
+    private $host = null;
 
-    private ?string $message = null;
+    /**
+     * @var string|null
+     */
+    private $message = null;
 
     /**
      * @var array<string, string>
      */
-    private array $metrics = [];
+    private $metrics = [];
 
-    private ?string $series = null;
+    /**
+     * @var string|null
+     */
+    private $series = null;
 
-    private ?int $statusCode = null;
+    /**
+     * @var int|null
+     */
+    private $statusCode = null;
 
     public function __construct(string $state)
     {

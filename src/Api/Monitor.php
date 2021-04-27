@@ -5,65 +5,119 @@ namespace SynergiTech\Cronitor\Api;
 class Monitor
 {
     /**
-     * @var array<mixed, mixed>
+     * @var array<mixed, mixed>|null
      */
-    private ?array $request = null;
+    private $request = null;
 
-    private ?bool $disabled = null;
+    /**
+     * @var bool|null
+     */
+    private $disabled = null;
 
-    private ?bool $initialized = null;
+    /**
+     * @var bool|null
+     */
+    private $initialized = null;
 
-    private ?bool $passing = null;
+    /**
+     * @var bool|null
+     */
+    private $passing = null;
 
-    private ?bool $paused = null;
+    /**
+     * @var bool|null
+     */
+    private $paused = null;
 
-    private ?bool $running = null;
+    /**
+     * @var bool|null
+     */
+    private $running = null;
 
-    private ?int $graceSeconds = null;
+    /**
+     * @var ?int
+     */
+    private $graceSeconds = null;
 
-    private ?int $toleratedFailures = null;
+    /**
+     * @var ?int
+     */
+    private $toleratedFailures = null;
 
-    private ?string $group = null;
+    /**
+     * @var ?string
+     */
+    private $group = null;
 
-    private string $key;
+    /**
+     * @var string
+     */
+    private $key;
 
-    private ?string $name = null;
+    /**
+     * @var ?string
+     */
+    private $name = null;
 
-    private ?string $note = null;
+    /**
+     * @var ?string
+     */
+    private $note = null;
 
-    private ?string $platform = null;
+    /**
+     * @var ?string
+     */
+    private $platform = null;
 
-    private ?string $realertInterval = null;
+    /**
+     * @var ?string
+     */
+    private $realertInterval = null;
 
-    private ?string $schedule = null;
+    /**
+     * @var ?string
+     */
+    private $schedule = null;
 
-    private ?string $status = null;
+    /**
+     * @var ?string
+     */
+    private $status = null;
 
-    private ?string $timezone = null;
+    /**
+     * @var ?string
+     */
+    private $timezone = null;
 
-    private ?\DateTime $created = null;
+    /**
+     * @var ?\DateTime
+     */
+    private $created = null;
 
     /**
      * @var array<string>
      */
-    private array $assertions = [];
+    private $assertions = [];
 
     /**
      * @var array<mixed, mixed>
      */
-    private array $metadata = [];
+    private $metadata = [];
 
     /**
      * @var array<mixed, mixed>
      */
-    private array $notify = [];
+    private $notify = [];
 
     /**
      * @var array<string>
      */
-    private array $tags = [];
+    private $tags = [];
 
-    private string $type;
+    /**
+     * @var string
+     */
+    private $type;
 
     public function __construct(string $key, string $type)
     {

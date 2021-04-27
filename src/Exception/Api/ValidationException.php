@@ -7,7 +7,7 @@ class ValidationException extends \Exception
     /**
      * @var array<mixed, mixed>
      */
-    private array $errors;
+    private $errors;
 
     /**
      * @param array<mixed, mixed> $errors

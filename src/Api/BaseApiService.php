@@ -9,7 +9,10 @@ use SynergiTech\Cronitor\Exception\Api\ValidationException;
 
 abstract class BaseApiService
 {
-    private Client $client;
+    /**
+     * @var Client
+     */
+    private $client;
 
     public function __construct(Client $client)
     {

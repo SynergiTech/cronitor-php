@@ -4,11 +4,20 @@ namespace SynergiTech\Cronitor\Telemetry;
 
 class Monitor
 {
-    private TelemetryService $service;
+    /**
+     * @var TelemetryService
+     */
+    private $service;
 
-    private string $monitorKey;
+    /**
+     * @var string
+     */
+    private $monitorKey;
 
-    private ?string $series;
+    /**
+     * @var string|null
+     */
+    private $series;
 
     public function __construct(TelemetryService $service, string $monitorKey)
     {
