@@ -54,7 +54,7 @@ class MonitorTest extends TestCase
                     'test-key',
                     $this->callback(function ($event) {
                         return $event->getState() === 'fail'
-                            and $event->getMessage() === 'DivisionByZeroError: Division by zero';
+                            and $event->getMessage() === 'RuntimeException: my-exception-message';
                     }),
                 ],
             );
@@ -66,10 +66,10 @@ class MonitorTest extends TestCase
         try {
             $monitor->job(function () use (&$wasJobExecuted) {
                 $wasJobExecuted = true;
-                /* @phpstan-ignore-next-line */
-                $thisLineThrows = 1 / 0;
+
+                throw new \RuntimeException('my-exception-message');
             });
-        } catch (\DivisionByZeroError) {
+        } catch (\RuntimeException $e) {
             $wasExceptionCaught = true;
         }
 
